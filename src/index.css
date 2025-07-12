@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  margin: 0;
+  backgpround-color: black;
+/*  @apply bg-slate-100; */
+}
+@layer utilities {
+  .neon-purple {
+    @apply text-purple-300;
+    text-shadow:
+      0 0 5px #d0aaff,
+      0 0 10px #a470ff,
+      0 0 15px #a470ff,
+      0 0 20px #7c4dff;
+  }
+}
+  .flicker {
+    animation: pulse-glow 2s infinite;
+  }
+
+  @keyframes pulse-glow {
+  0%, 100% {
+    text-shadow:
+      0 0 5px #d0aaff,
+      0 0 10px #a470ff,
+      0 0 15px #a470ff,
+      0 0 20px #7c4dff;
+  }
+  50% {
+    text-shadow:
+      0 0 3px #d0aaff,
+      0 0 6px #a470ff,
+      0 0 9px #a470ff,
+      0 0 12px #7c4dff;
+  }
+}
+/* Fade-out Animation & Hide After Delay */
+#preloader.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  pointer-events: none;
+}
+
+#preloader.hidden {
+  display: none;
+}
+
